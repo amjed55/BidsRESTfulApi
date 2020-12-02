@@ -1,4 +1,4 @@
-#INTRODUCTION
+INTRODUCTION
 ------------
 
 This program connects to the given sqlite database using nodejs and displays output using html.
