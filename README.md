@@ -1,9 +1,9 @@
-INTRODUCTION
+#INTRODUCTION
 ------------
 
 This program connects to the given sqlite database using nodejs and displays output using html.
 
-CONFIGURATION
+#CONFIGURATION
 -------------
 1. Open cmd 
 2. CD to ../Bids folder location
@@ -11,7 +11,7 @@ CONFIGURATION
 4. Will give URL for where it is running
 5. Enter URL in address bar of your favourite web explorer 
 
-TECHNOLOGIES USED
+#TECHNOLOGIES USED
 -----------------
 - JavaScript
 - HTML
@@ -23,7 +23,7 @@ TECHNOLOGIES USED
 - Nodemon
 
 
-FEATURES
+#FEATURES
 --------
 - Excel file was imported to an SQLite database
 - server starts webpage
@@ -34,9 +34,7 @@ FEATURES
 - Data is shown in a table
 - Last column is a button which when clicked, links to the corresponding URL
 
-MAINTAINERS
+#MAINTAINERS
 -----------
 Author: Mohammad Amjed
-For : PledgX
-Position: Full Stack Developer
 
