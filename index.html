@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Import ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Import css -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Title -->
+    <h1>Full Stack Developer Assessment</h1>
+    <!-- Buttons for pagination, was unable to complete -->
+    <input type="button" id="first" onclick="firstPage()" value="first" />
+    <input type="button" id="next" onclick="nextPage()" value="next" />
+    <input type="button" id="previous" onclick="previousPage()" value="previous" />
+    <input type="button" id="last" onclick="lastPage()" value="last" />
+    <div id='div1'></div>
+</body>
+
+<!-- create table and display data  -->
+<script type="text/javascript">
+    function getTable(data) {
+        let htmlString = '<table style="width:100%">';
+        //Headers
+        htmlString += '<tr><th>Bid Name</th>';
+        htmlString += '<th>Status</th>';
+        htmlString += '<th>Published Date</th>';
+        htmlString += '<th>Closing Date</th>';
+        htmlString += '<th>Organization</th>';
+        htmlString += '<th>View</th></tr>';
+        for (let row of data) {
+            htmlString += '<tr>';
+            htmlString += `<td>${row.BidName}</td>`;
+            htmlString += `<td>${row.STATUS}</td>`;
+            htmlString += `<td>${row.PublishedDate}</td>`;
+            htmlString += `<td>${row.ClosingDate}</td>`;
+            htmlString += `<td>${row.ORGANIZATION}</td>`;
+            htmlString += `<td><a href='${row.VIEW}'><button>More Info</button></button></a></td>`; //Button with link to url
+            htmlString += '</tr>';
+        }
+        htmlString += '</table>';
+        return htmlString;
+    }
+    // Function to compare dates
+    function compareDate(a, b) {
+
+        console.log("a closing date : " + a.ClosingDate);
+        console.log("a closing date int: " + Date.parse(a.ClosingDate));
+        console.log("b closing date : " + b.ClosingDate);
+        console.log("b closing date int: " + Date.parse(b.ClosingDate));
+        console.log("return int: " + (Date.parse(a.ClosingDate) - Date.parse(b.ClosingDate)));
+        if (isNaN(Date.parse(a.ClosingDate) - Date.parse(b.ClosingDate))) {
+            console.log("Error: Unable To Compare Dates");
+        }
+        else {
+            return Date.parse(a.ClosingDate) - Date.parse(b.ClosingDate);
+        }
+
+    }
+
+    // Get data from url using ajax
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:3000/", success: function (result) {
+
+                $("#div1").html(getTable(result.data.sort(compareDate)));
+                // $("#div1").html(getTable(result.data));
+                // console.log(getTable(result.data));
+
+            }
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+td :hover{
+    background-color: salmon;
+}
+th {
+    border: 3px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color: rgb(75, 116, 192);
+    font-size: 25px;
+}
+
+td {
+    border: 3px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color: tomato;
+}
+
+button {
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+body {
+    background: rgb(54, 165, 146);
+    font-family: verdana;
+    color: rgb(0, 0, 0);
+    padding: 30px;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+}
